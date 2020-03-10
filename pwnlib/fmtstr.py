@@ -869,7 +869,7 @@ class FmtStr(object):
         marker = cyclic(20)
         for off in range(1,1000):
             leak = self.leak_stack(off, marker)
-            leak = pack(leak)
+            leak = pack(leak, word_size="all")
 
             pad = cyclic_find(leak)
             if pad >= 0 and pad < 20:
